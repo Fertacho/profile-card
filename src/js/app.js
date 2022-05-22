@@ -1,3 +1,4 @@
+import { left } from "@popperjs/core";
 import "../style/index.css";
 
 /**
@@ -31,7 +32,6 @@ function render(variables = {}) {
   let name = `<h1>${variables.name} ${variables.lastname}</h1>`;
   if (variables.name == null || variables.lastname == null)
     name = "<h1>Add name and last name</h1>";
-
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
@@ -39,7 +39,7 @@ function render(variables = {}) {
           ${name}
           <h2>Web Developer</h2>
           <h3>Miami, USA</h3>
-          <ul class="position-right">
+          <ul class="${variables.socialMediaPosition}">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
