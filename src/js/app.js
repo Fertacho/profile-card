@@ -32,12 +32,15 @@ function render(variables = {}) {
   let name = `<h1>${variables.name} ${variables.lastname}</h1>`;
   if (variables.name == null || variables.lastname == null)
     name = "<h1>Add name and last name</h1>";
+  let role = `<h2>${variables.role}</h2>`;
+  if (variables.role == null) role = "<h2>What's your role?</h2>";
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           ${name}
-          <h2>Web Developer</h2>
+          ${role}
           <h3>Miami, USA</h3>
           <ul class="${variables.socialMediaPosition}">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
