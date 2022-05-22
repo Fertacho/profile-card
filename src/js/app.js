@@ -34,6 +34,8 @@ function render(variables = {}) {
     name = "<h1>Add name and last name</h1>";
   let role = `<h2>${variables.role}</h2>`;
   if (variables.role == null) role = "<h2>What's your role?</h2>";
+  let city = `<h3>${variables.city},${variables.country}</h3>`;
+  if (variables.city == null) city = "<h3>city,country</h3>";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -41,7 +43,7 @@ function render(variables = {}) {
           <img src="${variables.avatarURL}" class="photo" />
           ${name}
           ${role}
-          <h3>Miami, USA</h3>
+          ${city}
           <ul class="${variables.socialMediaPosition}">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
